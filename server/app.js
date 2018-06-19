@@ -47,4 +47,13 @@ app.get('/api/cities/:city_code', function(req, res) {
   })
 })
 
-app.listen(3000)
+var port = process.env.PORT || 3000;
+// var basic = auth.basic({
+//         realm: "Web."
+//     }, function (username, password, callback) { // Custom authentication method.
+//         callback(username === "23232ededDE" && password === "sdsd3432d8n8");
+//     }
+// )
+// app.use('/api', auth.connect(basic),  router);
+
+app.listen(port)

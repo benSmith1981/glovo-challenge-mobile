@@ -1,4 +1,4 @@
 {
-    "ApiBase": "http://localhost:3000/api/",
+    "ApiBase": "https://glovochallenge.herokuapp.com/api/",
     "GoogleMapsKey": "AIzaSyBVKPRytQTq21wZxln-m9ROb7yKLffq_1A",
 }

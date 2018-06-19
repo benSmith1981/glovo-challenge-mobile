@@ -128,6 +128,7 @@ class MapViewController: UIViewController, ISHPullUpContentDelegate {
 //Location Service
 extension MapViewController: LocationServiceDelegate {
     func trackingLocation(for currentLocation: CLLocation) {
+
         let camera = GMSCameraPosition.camera(withLatitude: currentLocation.coordinate.latitude,
                                               longitude: currentLocation.coordinate.longitude,
                                               zoom: initialZoomLevel)
@@ -143,6 +144,7 @@ extension MapViewController: LocationServiceDelegate {
                 delegate?.showMessage(message: NSLocalizedString("outofBoundsMessage", comment: ""))
             }
         }
+
     }
     
     func trackingLocationDidFail(with error: Error) {

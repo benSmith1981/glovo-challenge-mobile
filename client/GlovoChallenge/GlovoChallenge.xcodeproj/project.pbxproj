@@ -9,6 +9,13 @@
 /* Begin PBXBuildFile section */
 		17221C310A2BA0A2F7D38C76 /* Pods_GlovoChallengeProd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1800995638F61FB1C829E1D /* Pods_GlovoChallengeProd.framework */; };
 		314577BB0A2C16530AEE02B7 /* Pods_GlovoChallengeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 826FA95430942827A29D18F2 /* Pods_GlovoChallengeUITests.framework */; };
+		9050BFF820D982C700C30FAA /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D2543220D82888005BE670 /* R.generated.swift */; };
+		9050BFF920D982D700C30FAA /* CityDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 90D2543720D87ED6005BE670 /* CityDetailTableViewCell.xib */; };
+		9050BFFA20D982DA00C30FAA /* CityDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D2543620D87ED6005BE670 /* CityDetailTableViewCell.swift */; };
+		9050BFFB20D982E300C30FAA /* PopupVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90D2543D20D8A3CE005BE670 /* PopupVC.storyboard */; };
+		9050BFFC20D982E600C30FAA /* PopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D2543C20D8A3CE005BE670 /* PopupViewController.swift */; };
+		9050BFFD20D982E800C30FAA /* PopAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D2543B20D8A3CE005BE670 /* PopAnimator.swift */; };
+		9050BFFE20D982EE00C30FAA /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D2544120D8A432005BE670 /* Extensions.swift */; };
 		90D253C020D7B807005BE670 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D253BF20D7B807005BE670 /* AppDelegate.swift */; };
 		90D253C220D7B807005BE670 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D253C120D7B807005BE670 /* MapViewController.swift */; };
 		90D253C520D7B807005BE670 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90D253C320D7B807005BE670 /* Main.storyboard */; };
@@ -19,7 +26,6 @@
 		90D253EE20D7B852005BE670 /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D253ED20D7B852005BE670 /* ApiManager.swift */; };
 		90D253F020D7B8DC005BE670 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D253EF20D7B8DC005BE670 /* Config.swift */; };
 		90D253F420D7BBC9005BE670 /* Config.json in Resources */ = {isa = PBXBuildFile; fileRef = 90D253F320D7BBC9005BE670 /* Config.json */; };
-		90D253F620D7BBE1005BE670 /* Config.json in Resources */ = {isa = PBXBuildFile; fileRef = 90D253F520D7BBE0005BE670 /* Config.json */; };
 		90D253F920D7BDC5005BE670 /* Cities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D253F820D7BDC5005BE670 /* Cities.swift */; };
 		90D253FB20D7BDCB005BE670 /* Countries.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D253FA20D7BDCB005BE670 /* Countries.swift */; };
 		90D253FD20D7BDD2005BE670 /* CityDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D253FC20D7BDD2005BE670 /* CityDetail.swift */; };
@@ -42,7 +48,6 @@
 		90D2542020D82800005BE670 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D253BF20D7B807005BE670 /* AppDelegate.swift */; };
 		90D2542220D82800005BE670 /* Pods_GlovoChallenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0184C720AFD62BC45394813D /* Pods_GlovoChallenge.framework */; };
 		90D2542420D82800005BE670 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90D253C820D7B808005BE670 /* LaunchScreen.storyboard */; };
-		90D2542520D82800005BE670 /* Config.json in Resources */ = {isa = PBXBuildFile; fileRef = 90D253F320D7BBC9005BE670 /* Config.json */; };
 		90D2542620D82800005BE670 /* Config.json in Resources */ = {isa = PBXBuildFile; fileRef = 90D253F520D7BBE0005BE670 /* Config.json */; };
 		90D2542720D82800005BE670 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 90D253C620D7B808005BE670 /* Assets.xcassets */; };
 		90D2542820D82800005BE670 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90D253C320D7B807005BE670 /* Main.storyboard */; };
@@ -472,7 +477,6 @@
 			files = (
 				90D253CA20D7B808005BE670 /* LaunchScreen.storyboard in Resources */,
 				90D253F420D7BBC9005BE670 /* Config.json in Resources */,
-				90D253F620D7BBE1005BE670 /* Config.json in Resources */,
 				90D2544020D8A3CE005BE670 /* PopupVC.storyboard in Resources */,
 				90D2543920D87ED6005BE670 /* CityDetailTableViewCell.xib in Resources */,
 				90D2544520D9354D005BE670 /* Localizable.strings in Resources */,
@@ -500,10 +504,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				90D2542420D82800005BE670 /* LaunchScreen.storyboard in Resources */,
-				90D2542520D82800005BE670 /* Config.json in Resources */,
 				90D2542620D82800005BE670 /* Config.json in Resources */,
 				90D2544B20D936D7005BE670 /* Localizable.strings in Resources */,
+				9050BFF920D982D700C30FAA /* CityDetailTableViewCell.xib in Resources */,
 				90D2542720D82800005BE670 /* Assets.xcassets in Resources */,
+				9050BFFB20D982E300C30FAA /* PopupVC.storyboard in Resources */,
 				90D2542820D82800005BE670 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -809,11 +814,16 @@
 				90D2541620D82800005BE670 /* ControllerView.swift in Sources */,
 				90D2541820D82800005BE670 /* Config.swift in Sources */,
 				90D2541920D82800005BE670 /* Color.swift in Sources */,
+				9050BFFC20D982E600C30FAA /* PopupViewController.swift in Sources */,
+				9050BFFD20D982E800C30FAA /* PopAnimator.swift in Sources */,
 				90D2541A20D82800005BE670 /* ApiManager.swift in Sources */,
+				9050BFF820D982C700C30FAA /* R.generated.swift in Sources */,
 				90D2541B20D82800005BE670 /* Countries.swift in Sources */,
 				90D2541C20D82800005BE670 /* LocationServiceDelegate.swift in Sources */,
+				9050BFFA20D982DA00C30FAA /* CityDetailTableViewCell.swift in Sources */,
 				90D2541D20D82800005BE670 /* CityDetail.swift in Sources */,
 				90D2541E20D82800005BE670 /* LocationService.swift in Sources */,
+				9050BFFE20D982EE00C30FAA /* Extensions.swift in Sources */,
 				90D2541F20D82800005BE670 /* DetailsViewController.swift in Sources */,
 				90D2542020D82800005BE670 /* AppDelegate.swift in Sources */,
 			);
@@ -997,7 +1007,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.bensmithinc.GlovoChallenge;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -1016,7 +1026,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.bensmithinc.GlovoChallenge;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
