@@ -13,7 +13,7 @@ import MapKit
 protocol controllerViewCallBack {
     func updateMap()
     func updateDetails(city: String)
-    func showMessage()
+    func showMessage(message: String)
 }
 class ControllerView: ISHPullUpViewController {
     
@@ -98,10 +98,21 @@ extension ControllerView {
 
 
 extension ControllerView: controllerViewCallBack {
-    func showMessage() {
-        self.showPopUpView(msg: "You chose not to share your location, please select a city to see it is working area", actionButtonTitle: "Go To Madrid", closeButtonTitle: "Close and choose city") {
-            self.mapContentVC?.gotoLocation(location: CLLocationCoordinate2D.init(latitude: 40.416775, longitude: -3.70379))
+    func showMessage(message: String) {
+        if message ==  NSLocalizedString("outofBoundsMessage", comment: "") {
+            self.showPopUpView(msg: message, actionButtonTitle: NSLocalizedString("goToMadrid", comment: ""),
+                               closeButtonTitle: NSLocalizedString("closeChooseCity", comment: "")) {
+                                self.mapContentVC?.gotoLocation(location: CLLocationCoordinate2D.init(latitude: 40.416775, longitude: -3.70379))
+            }
+        } else {
+            self.showPopUpView(msg: message, actionButtonTitle: NSLocalizedString("redoLocation", comment: ""),
+                               closeButtonTitle: NSLocalizedString("closeChooseCity", comment: "")) {
+                                if let url = URL(string: "App-prefs:root=LOCATION_SERVICES") {
+                                    UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                                }
+            }
         }
+
     }
     func updateMap() {
 
@@ -109,7 +120,7 @@ extension ControllerView: controllerViewCallBack {
     
     func updateDetails(city: String) {
         if city == "Not Found" {
-            let city = CityDetail.init(code: "", name: "Out of Bounds", currency: "", country_code: "", enabled: false, time_zone: "", working_area: [], busy: false, language_code: "")
+            let city = CityDetail.init(code: "", name: NSLocalizedString("outOfBounds", comment: ""), currency: "", country_code: "", enabled: false, time_zone: "", working_area: [], busy: false, language_code: "")
             self.detailScreenBottomVC?.city = city
         } else {
             self.getCityDetail(cityCode: city)

@@ -25,14 +25,24 @@ class MapViewController: UIViewController, ISHPullUpContentDelegate {
     var switchZoomLevel: Float = 11.0
     let initialZoomLevel: Float = 12.0
     var polygonLoaded = true
-    
+    var firstLoad = true
+
     var cityPolygons: [CityPolygon] = []
-    var cities: [Cities] = []
+    var cities: [Cities] = [] {
+        didSet {
+            loadCityPolygonOnMap()
+
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        LocationService.sharedInstance.delegate = self
+        getUserLocation()
         // Do any additional setup after loading the view, typically from a nib.
+    }
+    
+    func getUserLocation() {
+         LocationService.sharedInstance.delegate = self
     }
 
     func loadCityPolygonOnMap(){
@@ -106,6 +116,7 @@ class MapViewController: UIViewController, ISHPullUpContentDelegate {
         marker.position = CLLocationCoordinate2D(latitude: location.coordinate.latitude,
                                                  longitude: location.coordinate.longitude)
         marker.title = title
+        marker.icon = #imageLiteral(resourceName: "yellowPindrop")
         marker.snippet = subtitle
         marker.map = mapView
     }
@@ -123,21 +134,30 @@ extension MapViewController: LocationServiceDelegate {
         self.mapView.camera = camera
         self.mapView?.settings.myLocationButton = true
         self.mapView?.delegate = self
-
+        
+        //if we got there location
+        if let location = LocationService.sharedInstance.currentLocation {
+            //And they are out of the working area
+            if checkIfCoordinateIsInWorkingArea(coordinate: location.coordinate) == false {
+                //Show them out of bounds message
+                delegate?.showMessage(message: NSLocalizedString("outofBoundsMessage", comment: ""))
+            }
+        }
     }
     
     func trackingLocationDidFail(with error: Error) {
         print("Failed to get location")
+        //go to madrid coords
         let coord = CLLocationCoordinate2D.init(latitude: 40.416775, longitude: -3.70379)
         let camera = GMSCameraPosition.camera(withLatitude: coord.latitude,
                                               longitude: coord.longitude,
-                                              zoom: 5)
+                                              zoom: 4)
         self.mapView.camera = camera
         self.mapView?.settings.myLocationButton = true
         self.mapView?.delegate = self
         loadCityPolygonOnMap()
         loadCityPinsOnMap()
-        delegate?.showMessage()
+        delegate?.showMessage(message: NSLocalizedString("refusedLocationMessage", comment: ""))
     }
     
 }
@@ -149,19 +169,6 @@ extension MapViewController: GMSMapViewDelegate {
             clearPolygon()
         }else {
             clearPins() 
-        }
-
-        let coordinate = mapView.projection.coordinate(for: mapView.center)
-        for cityPoly in self.cityPolygons {
-            for polyline in cityPoly.polyLines {
-                if let polyLinePath = polyline.path, let cityCode = cityPoly.city?.code,
-                    GMSGeometryContainsLocation(coordinate,polyLinePath,true) {
-                    self.delegate?.updateDetails(city: cityCode)
-                } else {
-                    self.delegate?.updateDetails(city: "Not Found") //send back not found string to show no city found
-                }
-            }
-
         }
     }
     
@@ -186,8 +193,32 @@ extension MapViewController: GMSMapViewDelegate {
             gotoLocation(location: location)
             return true
         } else {
+            delegate?.showMessage(message: NSLocalizedString("refusedLocationMessage", comment: ""))
             return false
         }
+    }
+    
+    func mapView(_ mapView: GMSMapView, idleAt position: GMSCameraPosition) {
+        //if after searching everywhere this coordinate is not found in the cities we are out of bounds
+        let coordinate = mapView.projection.coordinate(for: mapView.center)
+        if checkIfCoordinateIsInWorkingArea(coordinate: coordinate) == false {
+            self.delegate?.updateDetails(city: "Not Found") //send back not found string to show no city found
+        }
+
+    }
+
+    func checkIfCoordinateIsInWorkingArea(coordinate: CLLocationCoordinate2D) -> Bool {
+        var found = false
+        for cityPoly in self.cityPolygons {
+            for polyline in cityPoly.polyLines {
+                if let polyLinePath = polyline.path, let cityCode = cityPoly.city?.code,
+                    GMSGeometryContainsLocation(coordinate,polyLinePath,true) {
+                    found = true
+                    self.delegate?.updateDetails(city: cityCode)
+                }
+            }
+        }
+        return found
     }
     
     func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {

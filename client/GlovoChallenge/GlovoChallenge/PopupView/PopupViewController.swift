@@ -26,7 +26,7 @@ class PopupViewController: UIViewController, UIViewControllerTransitioningDelega
         super.viewDidLoad()
         popupView.setRadiusWithShadow(radius: 15)
         closeButton.setRadiusWithShadow(radius: 15)
-        
+        actionButton.setRadiusWithShadow(radius: 15)
         // Do any additional setup after loading the view.
     }
     

@@ -1,0 +1,13 @@
+/* 
+  localizable.strings
+  GlovoChallenge
+
+  Created by Ben Smith on 19/06/2018.
+  Copyright © 2018 Ben Smith. All rights reserved.
+*/
+
+"refusedLocationMessage" = "You chose not to share your location, please select a city to see it is working area";
+"outofBoundsMessage" = "You are outside of a working area, choose a city on the map";
+"outOfBounds" = "Out Of Bounds";
+"goToMadrid" = "Go To Madrid";
+"closeChooseCity" = "Close and choose city";

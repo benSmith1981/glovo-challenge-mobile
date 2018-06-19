@@ -120,8 +120,79 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.string` struct is generated, and contains static references to 0 localization tables.
+  /// This `R.string` struct is generated, and contains static references to 3 localization tables.
   struct string {
+    /// This `R.string.launchScreen` struct is generated, and contains static references to 0 localization keys.
+    struct launchScreen {
+      fileprivate init() {}
+    }
+    
+    /// This `R.string.localizable` struct is generated, and contains static references to 5 localization keys.
+    struct localizable {
+      /// Base translation: Close and choose city
+      /// 
+      /// Locales: en, es, Base
+      static let closeChooseCity = Rswift.StringResource(key: "closeChooseCity", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es", "Base"], comment: nil)
+      /// Base translation: Go To Madrid
+      /// 
+      /// Locales: en, es, Base
+      static let goToMadrid = Rswift.StringResource(key: "goToMadrid", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es", "Base"], comment: nil)
+      /// Base translation: Out Of Bounds
+      /// 
+      /// Locales: en, es, Base
+      static let outOfBounds = Rswift.StringResource(key: "outOfBounds", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es", "Base"], comment: nil)
+      /// Base translation: You are outside of a working area, choose a city on the map
+      /// 
+      /// Locales: en, es, Base
+      static let outofBoundsMessage = Rswift.StringResource(key: "outofBoundsMessage", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es", "Base"], comment: nil)
+      /// Base translation: You chose not to share your location, please select a city to see it is working area
+      /// 
+      /// Locales: en, es, Base
+      static let refusedLocationMessage = Rswift.StringResource(key: "refusedLocationMessage", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "es", "Base"], comment: nil)
+      
+      /// Base translation: Close and choose city
+      /// 
+      /// Locales: en, es, Base
+      static func closeChooseCity(_: Void = ()) -> String {
+        return NSLocalizedString("closeChooseCity", bundle: R.hostingBundle, value: "Close and choose city", comment: "")
+      }
+      
+      /// Base translation: Go To Madrid
+      /// 
+      /// Locales: en, es, Base
+      static func goToMadrid(_: Void = ()) -> String {
+        return NSLocalizedString("goToMadrid", bundle: R.hostingBundle, value: "Go To Madrid", comment: "")
+      }
+      
+      /// Base translation: Out Of Bounds
+      /// 
+      /// Locales: en, es, Base
+      static func outOfBounds(_: Void = ()) -> String {
+        return NSLocalizedString("outOfBounds", bundle: R.hostingBundle, value: "Out Of Bounds", comment: "")
+      }
+      
+      /// Base translation: You are outside of a working area, choose a city on the map
+      /// 
+      /// Locales: en, es, Base
+      static func outofBoundsMessage(_: Void = ()) -> String {
+        return NSLocalizedString("outofBoundsMessage", bundle: R.hostingBundle, value: "You are outside of a working area, choose a city on the map", comment: "")
+      }
+      
+      /// Base translation: You chose not to share your location, please select a city to see it is working area
+      /// 
+      /// Locales: en, es, Base
+      static func refusedLocationMessage(_: Void = ()) -> String {
+        return NSLocalizedString("refusedLocationMessage", bundle: R.hostingBundle, value: "You chose not to share your location, please select a city to see it is working area", comment: "")
+      }
+      
+      fileprivate init() {}
+    }
+    
+    /// This `R.string.main` struct is generated, and contains static references to 0 localization keys.
+    struct main {
+      fileprivate init() {}
+    }
+    
     fileprivate init() {}
   }
   

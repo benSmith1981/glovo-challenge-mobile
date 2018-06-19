@@ -53,6 +53,8 @@
 		90D2543F20D8A3CE005BE670 /* PopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D2543C20D8A3CE005BE670 /* PopupViewController.swift */; };
 		90D2544020D8A3CE005BE670 /* PopupVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90D2543D20D8A3CE005BE670 /* PopupVC.storyboard */; };
 		90D2544220D8A432005BE670 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D2544120D8A432005BE670 /* Extensions.swift */; };
+		90D2544520D9354D005BE670 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 90D2544720D9354D005BE670 /* Localizable.strings */; };
+		90D2544B20D936D7005BE670 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 90D2544720D9354D005BE670 /* Localizable.strings */; };
 		97C2A5B7FBDF91D165E8DC63 /* Pods_GlovoChallengeDev.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DCBD293762ACA95AEE5308C /* Pods_GlovoChallengeDev.framework */; };
 		CE5FCF838ED86E614297DCAF /* Pods_GlovoChallenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0184C720AFD62BC45394813D /* Pods_GlovoChallenge.framework */; };
 		E226234039EEB9CBF3CA3224 /* Pods_GlovoChallengeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BAF17F0F2F387423A62691D /* Pods_GlovoChallengeTests.framework */; };
@@ -118,6 +120,11 @@
 		90D2543C20D8A3CE005BE670 /* PopupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupViewController.swift; sourceTree = "<group>"; };
 		90D2543D20D8A3CE005BE670 /* PopupVC.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PopupVC.storyboard; sourceTree = "<group>"; };
 		90D2544120D8A432005BE670 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		90D2544620D9354D005BE670 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		90D2544820D9355D005BE670 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Main.strings; sourceTree = "<group>"; };
+		90D2544920D9355E005BE670 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		90D2544A20D9355E005BE670 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		90D2544C20D93701005BE670 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		931FB7F633847AB7074D2CA0 /* Pods-GlovoChallengeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GlovoChallengeUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GlovoChallengeUITests/Pods-GlovoChallengeUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		9DCBD293762ACA95AEE5308C /* Pods_GlovoChallengeDev.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GlovoChallengeDev.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACC7BFC0F33DD664F6E747ED /* Pods-GlovoChallengeProd.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GlovoChallengeProd.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GlovoChallengeProd/Pods-GlovoChallengeProd.debug.xcconfig"; sourceTree = "<group>"; };
@@ -185,6 +192,7 @@
 		90D253B320D7B807005BE670 = {
 			isa = PBXGroup;
 			children = (
+				90D2544720D9354D005BE670 /* Localizable.strings */,
 				90D253BE20D7B807005BE670 /* GlovoChallenge */,
 				90D253D320D7B809005BE670 /* GlovoChallengeTests */,
 				90D253DE20D7B809005BE670 /* GlovoChallengeUITests */,
@@ -442,6 +450,7 @@
 			knownRegions = (
 				en,
 				Base,
+				es,
 			);
 			mainGroup = 90D253B320D7B807005BE670;
 			productRefGroup = 90D253BD20D7B807005BE670 /* Products */;
@@ -466,6 +475,7 @@
 				90D253F620D7BBE1005BE670 /* Config.json in Resources */,
 				90D2544020D8A3CE005BE670 /* PopupVC.storyboard in Resources */,
 				90D2543920D87ED6005BE670 /* CityDetailTableViewCell.xib in Resources */,
+				90D2544520D9354D005BE670 /* Localizable.strings in Resources */,
 				90D253C720D7B808005BE670 /* Assets.xcassets in Resources */,
 				90D253C520D7B807005BE670 /* Main.storyboard in Resources */,
 			);
@@ -492,6 +502,7 @@
 				90D2542420D82800005BE670 /* LaunchScreen.storyboard in Resources */,
 				90D2542520D82800005BE670 /* Config.json in Resources */,
 				90D2542620D82800005BE670 /* Config.json in Resources */,
+				90D2544B20D936D7005BE670 /* Localizable.strings in Resources */,
 				90D2542720D82800005BE670 /* Assets.xcassets in Resources */,
 				90D2542820D82800005BE670 /* Main.storyboard in Resources */,
 			);
@@ -828,6 +839,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				90D253C420D7B807005BE670 /* Base */,
+				90D2544820D9355D005BE670 /* es */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -836,8 +848,19 @@
 			isa = PBXVariantGroup;
 			children = (
 				90D253C920D7B808005BE670 /* Base */,
+				90D2544920D9355E005BE670 /* es */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		90D2544720D9354D005BE670 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				90D2544620D9354D005BE670 /* en */,
+				90D2544A20D9355E005BE670 /* es */,
+				90D2544C20D93701005BE670 /* Base */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -847,6 +870,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -907,6 +931,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -1096,7 +1121,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.bensmithinc.GlovoChallenge;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -1115,7 +1140,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.bensmithinc.GlovoChallenge;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
