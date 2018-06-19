@@ -8,7 +8,6 @@
 
 import Foundation
 import Alamofire
-import SwiftyJSON
 import MapKit
 import UIKit
 
@@ -28,8 +27,8 @@ class APIManager {
         print("Initializing APIEngine with base url: \(url)")
     }
     
-    func getCityDetail(success:@escaping ((CityDetail, Data) -> Void), failure:@escaping ((String) -> Void)) {
-        Alamofire.request("\(url)cities/",
+    func getCityDetail(cityCode: String, success:@escaping ((CityDetail, Data) -> Void), failure:@escaping ((String) -> Void)) {
+        Alamofire.request("\(url)cities/\(cityCode)",
             method: .get,
             parameters: nil,
             encoding: JSONEncoding.default).responseData { (response) in

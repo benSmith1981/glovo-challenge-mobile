@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="aeC-ps-vJ3">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="ParaType - Futura PT Medium.otf">
+            <string>FuturaPT-Medium</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--PopupVIewController-->
+        <scene sceneID="J0j-kR-u4b">
+            <objects>
+                <viewController storyboardIdentifier="popupVC" title="PopupVIewController" nibName="PopupViewController" modalTransitionStyle="crossDissolve" modalPresentationStyle="overCurrentContext" useStoryboardIdentifierAsRestorationIdentifier="YES" id="aeC-ps-vJ3" customClass="PopupViewController" customModule="GlovoChallengeDev" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="BIX-26-gEr">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5M7-1J-yjY">
+                                <rect key="frame" x="51" y="199" width="272" height="285"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Hyp-lC-sCf">
+                                        <rect key="frame" x="29" y="4" width="215" height="261"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Something happened, fill in your own messages here" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dUw-2f-3ik">
+                                                <rect key="frame" x="0.0" y="0.0" width="215" height="157"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="157" id="c7i-Gx-wPU"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="FuturaPT-Medium" family="Futura PT" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="acl-4J-ln3">
+                                                <rect key="frame" x="0.0" y="167" width="215" height="42"/>
+                                                <color key="backgroundColor" red="0.97254901959999995" green="0.80392156859999997" blue="0.29411764709999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="42" id="nBw-vF-IOf"/>
+                                                    <constraint firstAttribute="width" constant="215" id="ytS-qP-MoU"/>
+                                                </constraints>
+                                                <state key="normal" title="close">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="closeView:" destination="aeC-ps-vJ3" eventType="touchUpInside" id="las-MS-gue"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b1T-dn-Vco" userLabel="action">
+                                                <rect key="frame" x="0.0" y="219" width="215" height="42"/>
+                                                <color key="backgroundColor" red="0.27058823529999998" green="0.61568627450000002" blue="0.51764705879999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="215" id="4j3-GZ-2Dj"/>
+                                                    <constraint firstAttribute="height" constant="42" id="Fjf-et-17y"/>
+                                                </constraints>
+                                                <state key="normal" title="action">
+                                                    <color key="titleColor" red="0.97254901959999995" green="0.80392156859999997" blue="0.29411764709999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="actionCode:" destination="aeC-ps-vJ3" eventType="touchUpInside" id="Xlx-oE-NGo"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.40000000000000002" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="Hyp-lC-sCf" firstAttribute="centerX" secondItem="5M7-1J-yjY" secondAttribute="centerX" id="BNv-mK-sUG"/>
+                                    <constraint firstItem="Hyp-lC-sCf" firstAttribute="leading" secondItem="5M7-1J-yjY" secondAttribute="leading" constant="28.5" id="QLu-Uf-xVo"/>
+                                    <constraint firstItem="Hyp-lC-sCf" firstAttribute="top" secondItem="5M7-1J-yjY" secondAttribute="top" constant="4" id="caK-IH-5AF"/>
+                                    <constraint firstItem="Hyp-lC-sCf" firstAttribute="centerY" secondItem="5M7-1J-yjY" secondAttribute="centerY" constant="-8" id="obL-al-WOb"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="5M7-1J-yjY" firstAttribute="centerX" secondItem="BIX-26-gEr" secondAttribute="centerX" id="HC1-jb-cJU"/>
+                            <constraint firstItem="5M7-1J-yjY" firstAttribute="centerY" secondItem="BIX-26-gEr" secondAttribute="centerY" constant="8" id="nai-LG-gpW"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Sow-xr-I9F"/>
+                    </view>
+                    <connections>
+                        <outlet property="actionButton" destination="b1T-dn-Vco" id="hpd-97-F6I"/>
+                        <outlet property="closeButton" destination="acl-4J-ln3" id="ZYl-8S-11X"/>
+                        <outlet property="containerView" destination="BIX-26-gEr" id="V8j-Uk-N7z"/>
+                        <outlet property="messageLabel" destination="dUw-2f-3ik" id="pEB-Em-pHe"/>
+                        <outlet property="popupView" destination="5M7-1J-yjY" id="imz-1V-l3H"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EW1-3D-HIJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="47.200000000000003" y="111.0944527736132"/>
+        </scene>
+    </scenes>
+</document>

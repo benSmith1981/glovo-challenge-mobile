@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Nh1-GR-bk8">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Delegate-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="map" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="MapViewController" customModule="GlovoChallenge" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" restorationIdentifier="map" translatesAutoresizingMaskIntoConstraints="NO" id="7bo-WF-ahg" customClass="GMSMapView">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="tTA-vU-su7"/>
+                                </connections>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="greenFlag" translatesAutoresizingMaskIntoConstraints="NO" id="3zt-np-4LC">
+                                <rect key="frame" x="194" y="294" width="24" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="2dF-YX-Too"/>
+                                    <constraint firstAttribute="width" constant="24" id="OAq-ja-yoR"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="3zt-np-4LC" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-21.5" id="9bc-su-AKR"/>
+                            <constraint firstItem="7bo-WF-ahg" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="RIT-rj-S98"/>
+                            <constraint firstItem="7bo-WF-ahg" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="fsT-FN-pUt"/>
+                            <constraint firstItem="3zt-np-4LC" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="18.5" id="p7l-XB-TxO"/>
+                            <constraint firstItem="7bo-WF-ahg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="rO5-rd-YPk"/>
+                            <constraint firstItem="7bo-WF-ahg" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="ylK-QP-dai"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="7bo-WF-ahg" id="6HJ-BL-hHT"/>
+                        <outlet property="rootView" destination="8bC-Xf-vdC" id="Hd6-82-CxY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="333.60000000000002" y="31.934032983508249"/>
+        </scene>
+        <!--Details View Controller-->
+        <scene sceneID="khg-n3-BLZ">
+            <objects>
+                <viewController storyboardIdentifier="detail" useStoryboardIdentifierAsRestorationIdentifier="YES" id="hNi-11-8Hh" customClass="DetailsViewController" customModule="GlovoChallenge" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rxw-1d-rVe" customClass="ISHPullUpRoundedVisualEffectView">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="400"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uK6-V8-xp4">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="400"/>
+                                <subviews>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5YL-Dl-Qmh">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="400"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" priority="999" constant="400" id="DZV-zg-mYy"/>
+                                            <constraint firstAttribute="width" constant="375" id="N2D-ex-vY8"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="dataSource" destination="hNi-11-8Hh" id="Ekg-da-G0B"/>
+                                            <outlet property="delegate" destination="hNi-11-8Hh" id="MSz-nj-vaR"/>
+                                        </connections>
+                                    </tableView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="5YL-Dl-Qmh" secondAttribute="trailing" id="3Jg-mH-YqL"/>
+                                    <constraint firstAttribute="bottom" secondItem="5YL-Dl-Qmh" secondAttribute="bottom" id="U7V-Dl-BI3"/>
+                                    <constraint firstItem="5YL-Dl-Qmh" firstAttribute="top" secondItem="uK6-V8-xp4" secondAttribute="top" id="cbY-Vm-KeP"/>
+                                    <constraint firstItem="5YL-Dl-Qmh" firstAttribute="leading" secondItem="uK6-V8-xp4" secondAttribute="leading" id="zGy-cB-AjP"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="uK6-V8-xp4" firstAttribute="top" secondItem="SUW-l1-CMc" secondAttribute="top" id="CNj-bu-jz1"/>
+                            <constraint firstItem="uK6-V8-xp4" firstAttribute="bottom" secondItem="SUW-l1-CMc" secondAttribute="bottom" id="Q0n-mP-Ebv"/>
+                            <constraint firstItem="uK6-V8-xp4" firstAttribute="trailing" secondItem="SUW-l1-CMc" secondAttribute="trailing" id="T8M-uM-rWT"/>
+                            <constraint firstItem="uK6-V8-xp4" firstAttribute="leading" secondItem="SUW-l1-CMc" secondAttribute="leading" id="ulI-ys-UhH"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="SUW-l1-CMc"/>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="400"/>
+                    <connections>
+                        <outlet property="rootView" destination="uK6-V8-xp4" id="4mO-hA-OES"/>
+                        <outlet property="tableView" destination="5YL-Dl-Qmh" id="prR-fb-DiZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xil-dI-0Np" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="334" y="608"/>
+        </scene>
+        <!--Controller View-->
+        <scene sceneID="CNX-l6-gw0">
+            <objects>
+                <viewController storyboardIdentifier="Controller" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Nh1-GR-bk8" customClass="ControllerView" customModule="GlovoChallenge" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ar0-JF-GTe">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="B73-Rm-uBX"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="97n-sg-V5m" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-575" y="32"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="greenFlag" width="512" height="512"/>
+    </resources>
+</document>
