@@ -31,10 +31,13 @@ class LocationService: NSObject, CLLocationManagerDelegate {
         switch(CLLocationManager.authorizationStatus()) {
         case .authorizedAlways, .authorizedWhenInUse:
             startUpdatingLocation(locationManager: locationManager)
-        case .denied, .notDetermined, .restricted:
-            let err = NSError.init()
+        case .notDetermined, .restricted:
             stopUpdatingLocation(locationManager: locationManager)
+        case .denied:
+            let err = NSError.init()
             delegate?.trackingLocationDidFail(with: err)
+            stopUpdatingLocation(locationManager: locationManager)
+
         }
     }
     
@@ -43,11 +46,13 @@ class LocationService: NSObject, CLLocationManagerDelegate {
         switch(CLLocationManager.authorizationStatus()) {
         case .authorizedAlways, .authorizedWhenInUse:
             startUpdatingLocation(locationManager: locationManager!)
-        case .denied, .notDetermined, .restricted:
-            let err = NSError.init()
-
+        case .notDetermined, .restricted:
             stopUpdatingLocation(locationManager: locationManager!)
+
+        case .denied:
+            let err = NSError.init()
             delegate?.trackingLocationDidFail(with: err)
+            stopUpdatingLocation(locationManager: locationManager!)
         }
     }
     
