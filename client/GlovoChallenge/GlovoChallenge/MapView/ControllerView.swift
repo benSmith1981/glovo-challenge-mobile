@@ -9,11 +9,11 @@
 import Foundation
 import UIKit
 import ISHPullUp
-
+import MapKit
 protocol controllerViewCallBack {
     func updateMap()
     func updateDetails(city: String)
-    
+    func showMessage()
 }
 class ControllerView: ISHPullUpViewController {
     
@@ -98,8 +98,13 @@ extension ControllerView {
 
 
 extension ControllerView: controllerViewCallBack {
+    func showMessage() {
+        self.showPopUpView(msg: "You chose not to share your location, please select a city to see it is working area", actionButtonTitle: "Go To Madrid", closeButtonTitle: "Close and choose city") {
+            self.mapContentVC?.gotoLocation(location: CLLocationCoordinate2D.init(latitude: 40.416775, longitude: -3.70379))
+        }
+    }
     func updateMap() {
-        
+
     }
     
     func updateDetails(city: String) {

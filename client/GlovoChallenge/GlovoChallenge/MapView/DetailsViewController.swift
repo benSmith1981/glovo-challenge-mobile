@@ -96,14 +96,7 @@ extension DetailsViewController {
     // MARK: ISHPullUpStateDelegate
     
     func pullUpViewController(_ pullUpViewController: ISHPullUpViewController, didChangeTo state: ISHPullUpState) {
-        //        topLabel.text = textForState(state);
-//        handleView.setState(ISHPullUpHandleView.handleState(for: state), animated: firstAppearanceCompleted)
-        
-        // Hide the scrollview in the collapsed state to avoid collision
-        // with the soft home button on iPhone X
-//        UIView.animate(withDuration: 0.25) { [weak self] in
-//            self?.tableView.alpha = (state == .collapsed) ? 0 : 1;
-//        }
+
         self.tableView.alpha = 1.0
     }
     

@@ -36,7 +36,6 @@ class APIManager {
                     if let jsonData = response.data {
                         let res = APIResponse(json: jsonData)
                         
-                        print("success \(res)")
                         let decoder = JSONDecoder()
                         do {
                             let city = try decoder.decode(CityDetail.self, from: res.json)
@@ -67,7 +66,6 @@ class APIManager {
                     if let jsonData = response.data {
                         let res = APIResponse(json: jsonData)
                         
-                        print("success \(res)")
                         let decoder = JSONDecoder()
                         do {
                             let cities = try decoder.decode([Cities].self, from: res.json)
@@ -98,7 +96,6 @@ class APIManager {
                                 if let jsonData = response.data {
                                     let res = APIResponse(json: jsonData)
                                     
-                                    print("success \(res)")
                                     let decoder = JSONDecoder()
                                     do {
                                         let countries = try decoder.decode([Countries].self, from: res.json)

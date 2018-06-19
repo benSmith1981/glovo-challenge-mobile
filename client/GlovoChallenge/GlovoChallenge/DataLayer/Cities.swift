@@ -11,8 +11,7 @@ import UIKit
 
 struct Cities: Codable {
     var working_area: [String]?
-    //["", "lqiqCxcvyGkPbg@kN`u@iFhaAu^qHyNgh@u`BqOaPsb@n@_ZIeYcBeFiZmMlB}R~LvCny@jDtD{RtFkKptC}nBpi@WfMzBbJqEpCdFpI`PpLrXzA|KiCzNcIrK{_@`G_]z_@wNdS"],
-    var code: String? // ": "SAN",
-    var name: String? // "name": "Santos",
-    var country_code: String //"country_code": "BR"
+    var code: String?
+    var name: String?
+    var country_code: String
 }

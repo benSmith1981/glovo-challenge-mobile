@@ -128,9 +128,16 @@ extension MapViewController: LocationServiceDelegate {
     
     func trackingLocationDidFail(with error: Error) {
         print("Failed to get location")
-        self.showPopUpView(msg: "You chose not to share your location, please select a city to see it is working area", actionButtonTitle: "Go To Madrid", closeButtonTitle: "Close and choose city") {
-            self.gotoLocation(location: CLLocationCoordinate2D.init(latitude: 40.416775, longitude: -3.70379))
-        }
+        let coord = CLLocationCoordinate2D.init(latitude: 40.416775, longitude: -3.70379)
+        let camera = GMSCameraPosition.camera(withLatitude: coord.latitude,
+                                              longitude: coord.longitude,
+                                              zoom: 5)
+        self.mapView.camera = camera
+        self.mapView?.settings.myLocationButton = true
+        self.mapView?.delegate = self
+        loadCityPolygonOnMap()
+        loadCityPinsOnMap()
+        delegate?.showMessage()
     }
     
 }
@@ -149,16 +156,13 @@ extension MapViewController: GMSMapViewDelegate {
             for polyline in cityPoly.polyLines {
                 if let polyLinePath = polyline.path, let cityCode = cityPoly.city?.code,
                     GMSGeometryContainsLocation(coordinate,polyLinePath,true) {
-                    print("GMSGeometryContainsLocation")
                     self.delegate?.updateDetails(city: cityCode)
                 } else {
-                    self.delegate?.updateDetails(city: "Not Found") //send back empty string to show no city found
-                    print("NOT FOUND GMSGeometryContainsLocation")
+                    self.delegate?.updateDetails(city: "Not Found") //send back not found string to show no city found
                 }
             }
 
         }
-        print("map zoom is ",String(zoomLevel))
     }
     
     func clearPolygon() {
@@ -175,11 +179,6 @@ extension MapViewController: GMSMapViewDelegate {
             loadCityPolygonOnMap()
         }
         polygonLoaded = false
-    }
-
-    func mapView(_ mapView: GMSMapView, didBeginDragging marker: GMSMarker) {
-        print("didBeginDragging")
-        
     }
     
     func didTapMyLocationButton(for mapView: GMSMapView) -> Bool {

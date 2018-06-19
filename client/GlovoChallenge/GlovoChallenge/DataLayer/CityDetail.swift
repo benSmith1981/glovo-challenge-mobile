@@ -9,13 +9,13 @@
 import Foundation
 import UIKit
 struct CityDetail: Codable {
-    var code: String? //: "BCN",
-    var name: String? //: "Barcelona",
-    var currency: String?  //: "EUR",
-    var country_code: String? //: "ES",
-    var enabled: Bool? //: true,
-    var time_zone: String? //: "CET",
+    var code: String?
+    var name: String?
+    var currency: String?
+    var country_code: String?
+    var enabled: Bool?
+    var time_zone: String?
     var working_area: [String]?
-    var busy: Bool? //: false,
-    var language_code: String? //: "es"
+    var busy: Bool?
+    var language_code: String?
 }

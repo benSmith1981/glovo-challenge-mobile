@@ -44,7 +44,10 @@ class LocationService: NSObject, CLLocationManagerDelegate {
         case .authorizedAlways, .authorizedWhenInUse:
             startUpdatingLocation(locationManager: locationManager!)
         case .denied, .notDetermined, .restricted:
+            let err = NSError.init()
+
             stopUpdatingLocation(locationManager: locationManager!)
+            delegate?.trackingLocationDidFail(with: err)
         }
     }
     
